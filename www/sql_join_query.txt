@@ -1,0 +1,7 @@
+select list.*, imdbrating.*, rotten.rottenlink from 
+imdbrating, list, imdb, rotten
+where
+LTRIM(RTRIM(list.imdblink))=LTRIM(RTRIM(imdb.imdblink)) &&
+LTRIM(RTRIM(imdb.link))=LTRIM(RTRIM(imdbrating.link)) &&
+LTRIM(RTRIM(list.id))=LTRIM(RTRIM(rotten.id))
+;
